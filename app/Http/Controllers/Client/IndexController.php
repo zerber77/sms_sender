@@ -17,7 +17,7 @@ class IndexController extends Controller
         $users['name'] = '564654564';
         $users['birth'] = Carbon::today();
         $users = User::firstOrCreate($users);*/
- //       dd($birthDate);
+        //dd(11111);
         return(view('client.index'));
     }
 }
