@@ -48,6 +48,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        <button class="btn m-3  stext-101 cl0 size-103 bg1  hov-btn1 p-lr-15 trans-04" @click.prevent="store">Добавить клиента</button>
                     </section>
                 </div>
                 <!-- /.content-wrapper -->
@@ -83,6 +84,9 @@ export default {
                     this.users[index].status = res.data
                 })
         },
+        store(){
+            this.$router.push({name: 'user.create'})
+        },
     },
     mounted(){
         this.getUsers()
@@ -91,5 +95,8 @@ export default {
 </script>
 
 <style scoped>
-
+.btn{
+    background-color: #007bff;
+    color: #fff;
+}
 </style>

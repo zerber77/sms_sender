@@ -13,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+/*
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+*/
 //Route::group(['namespace'=>'API', 'prefix' => 'api'], function () {
     Route::group(['namespace'=>'API\Users', 'prefix' => 'users'], function () {
         Route::get('/','IndexController');
+        Route::post('/store','StoreController');
         Route::get('/{user}','SendController');
-/*        Route::patch('/{comment}','UpdateController');
-        Route::delete('/{comment}','DeleteController');*/
+
     });
 //});
 Route::group(['namespace'=>'API\Sms', 'prefix' => 'sms'], function () {
