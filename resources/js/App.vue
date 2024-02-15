@@ -1,6 +1,12 @@
 <template>
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        </div>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
             <!-- Brand Logo -->
-            <a href="/" class="brand-link">
+            <a href="#" class="brand-link">
                 <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
@@ -14,11 +20,10 @@
                         <!-- Add icons to the links using the .nav-icon class
                              with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <router-link  to="/product" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <router-link  to="/" class="nav-link active">
+                                <i class="nav-icon fa fa-user"></i>
                                 <p>
-                                    База данных
-                                    <i class="right fas fa-angle-left"></i>
+                                    Пользователи
                                 </p>
                             </router-link>
 
@@ -26,26 +31,26 @@
 
                         <li class="nav-item menu-open">
                             <router-link  to="/product" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fa fa-mail-reply"></i>
                                 <p>
-                                    Логи
-                                    <i class="right fas fa-angle-left"></i>
+                                    CMC
                                 </p>
                             </router-link>
-                            <ul class="nav nav-treeview">
+ <!--                           <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p data-file=""></p>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul>-->
                         </li>
 
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
+        </aside>
 
     <router-view :key="$route.fullPath"></router-view>
 </template>
