@@ -30,11 +30,11 @@
                 <input v-model="name" type="text" class="form-control"  placeholder="ФИО" maxlength="50">
             </td>
             <td><!--title-->
-                <input v-model="phone" type="text" class="form-control"  placeholder="Номер телефона" maxlength="30">
+                <input v-model="phone" type="text" class="form-control"  placeholder="Номер телефона" maxlength="12">
             </td>
             <td><!--title-->
 
-                <input type="date" v-model="birth" id="start" name="trip-start" value="2005-12-01" min="1930-01-01" max="2018-12-31" />
+                <input type="date" v-model="birth" id="start" name="trip-start" value="2005-12-01" min="1920-01-01" max="2018-12-31" />
 
             </td>
         </tr>
@@ -66,9 +66,9 @@ export default {
     methods:{
         store(){
             console.log(this.name, this.birth)
-            api.post(`api/users/store/`,{'name':this.name, 'phone':this.phone,'birth':this.birth})
+            api.post(`api/users/store/`,{'phone':this.phone,'name':this.name, 'birth':this.birth})
                 .then(res=>{
-
+                    this.$router.push({name: 'index'})
                 })
         },
     },
