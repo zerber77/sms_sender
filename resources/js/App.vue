@@ -45,7 +45,15 @@
                                 </li>
                             </ul>-->
                         </li>
+                        <li class="nav-item menu-open">
+                            <router-link  to="/about" class="nav-link active">
+                                <i class="nav-icon fa fa-address-book"></i>
+                                <p>
+                                    O приложении
+                                </p>
+                            </router-link>
 
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -62,5 +70,7 @@ export default {
 </script>
 
 <style scoped>
-
+p:hover{
+   color: #a5d9ea;
+}
 </style>

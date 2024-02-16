@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Панель управления</h1>
+                        <h1 class="m-0">Пользователи</h1>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -19,8 +19,8 @@
                             <thead>
                             <tr>
                                 <th scope="col" class="">#</th>
-                                <th scope="col" class="">Пользователь</th>
-                                <th scope="col" class="">Текст отзыва</th>
+                                <th scope="col" class="">Телефон</th>
+                                <th scope="col" class="">ФИО</th>
                                 <th scope="col" class="">Дата рождения</th>
                                 <th scope="col" class="">Отправить СМС</th>
                                 <th scope="col" class="">Редактировать</th>
@@ -43,7 +43,7 @@
                                     <button  @click.prevent="update(comment.id, i)"><i style="color: #234e89" class="fa fa-pencil m-auto"></i></button>
                                 </td>
                                 <td>
-                                    <button  @click.prevent="delete_comment(comment.id)"> <i style="color: #ee5566" class="fa fa-pencil m-auto"></i></button>
+                                    <button  @click.prevent="delUser(comment.id)"> <i style="color: #ee5566" class="fa fa-trash m-auto"></i></button>
                                 </td>
                             </tr>
                             </tbody>
@@ -86,6 +86,12 @@ export default {
         },
         store(){
             this.$router.push({name: 'user.create'})
+        },
+        delUser(id) {
+            api.get('api/users/del/'+id)
+                .then(res => {
+                    this.getUsers()
+                })
         },
     },
     mounted(){

@@ -16,6 +16,7 @@ class SmsResource extends JsonResource
     public function toArray($request)
     {
         $dt = Carbon::create($this->created_at);
+        $udt = Carbon::create($this->updated_at);
         return [
             'id' => $this->id,
             'user_id' => $this->user_id,
@@ -25,6 +26,7 @@ class SmsResource extends JsonResource
             'status' => $this->status,
             'mode' => $this->mode,
             'created_at' => $dt->toDayDateTimeString(),
+            'updated_at' => $udt->toDayDateTimeString(),
 
         ];
     }

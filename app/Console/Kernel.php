@@ -26,8 +26,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
- //        $schedule->command('inspire')->hourly();
-        $schedule->call(SendSms::class)->everyMinute();//dailyAt('15:10');
+        ////php artisan schedule:run
+        $schedule->call(CollectBirthdays::class)->everyMinute();//    everyMinute();
+        $schedule->call(SendBirthdaySms::class)->between('7:30', '9:00');
    /*     $schedule->call(function () {
             $users['phone'] = '564546654564';
             $users['name'] = '564654564564';
@@ -44,7 +45,6 @@ class Kernel extends ConsoleKernel
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');
-
         require base_path('routes/console.php');
     }
 }

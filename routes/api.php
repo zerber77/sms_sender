@@ -23,10 +23,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
         Route::get('/','IndexController');
         Route::post('/store','StoreController');
         Route::get('/{user}','SendController');
+        Route::get('/del/{user}','DeleteController');
 
     });
 //});
 Route::group(['namespace'=>'API\Sms', 'prefix' => 'sms'], function () {
     Route::get('/','IndexController');
+    Route::get('/del/{sms}','DeleteController');
     //Route::get('/{user}','SendController');
 });

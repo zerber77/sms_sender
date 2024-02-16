@@ -16,10 +16,8 @@ class StoreController extends Controller
     public function __invoke(UserRequest $request){//
 
         $data = $request->validated();
-        dd($data);
-        Users::firstOrCreate($data);
-        $categories = Category::all();
-        return CategoryResource::collection($categories);
+        $user = User::firstOrCreate($data);
+        return ($user);
     }
 }
 
