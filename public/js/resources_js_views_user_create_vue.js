@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
     store: function store() {
       var _this = this;
       console.log(this.name, this.birth);
-      _modules_api__WEBPACK_IMPORTED_MODULE_0__["default"].post("api/users/store/", {
+      _modules_api__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/users/store", {
         'phone': this.phone,
         'name': this.name,
         'birth': this.birth
@@ -196,7 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-e21b58de]{\r\n    background-color: #007bff;\r\n    color: #fff;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-e21b58de]{\n    background-color: #007bff;\n    color: #fff;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

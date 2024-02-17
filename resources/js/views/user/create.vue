@@ -66,7 +66,7 @@ export default {
     methods:{
         store(){
             console.log(this.name, this.birth)
-            api.post(`api/users/store/`,{'phone':this.phone,'name':this.name, 'birth':this.birth})
+            api.post(`/api/users/store`,{'phone':this.phone,'name':this.name, 'birth':this.birth})
                 .then(res=>{
                     this.$router.push({name: 'index'})
                 })
